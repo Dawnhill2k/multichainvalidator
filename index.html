@@ -3907,9 +3907,15 @@
 </script>
     
 <script>
-  window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
-  });
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.onload = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  };
 </script>
     
 </body>
